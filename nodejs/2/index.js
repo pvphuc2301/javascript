@@ -4,4 +4,5 @@
  * 3. Log ra kết quả
  */
 const math = require('./math');
-console.log(math.multiply(2, 3));
+const result = math.multiply(2, 3);
+console.log(result);
