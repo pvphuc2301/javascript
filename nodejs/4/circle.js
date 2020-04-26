@@ -12,15 +12,14 @@
  }
 
  Circle.prototype.isOverlapped = function(circle){
-    const d = Math.sqrt(Math.pow(circle.x - this.x, 2) + Math.pow(circle.y - this.y, 2));
-    if(d > this.radius + circle.radius){
+    const distance = Math.sqrt(Math.pow(circle.x - this.x, 2) + Math.pow(circle.y - this.y, 2));
+    const radiusSum = this.radius + circle.radius;
+    if(distance > radiusSum){
         return 1;
-    }else if (d > this.radius - circle.radius && d < this.radius + circle.radius 
-        || d == this.radius  + circle.radius
-        || d == Math.abs(this.radius  - circle.radius)){
-        return 0;
-    }else{
+    }else if(distance < radiusSum){
         return -1;
+    }else{
+        return 0;
     }
  }
 
