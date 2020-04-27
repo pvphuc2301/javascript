@@ -7,16 +7,16 @@
 /**
  * SpeakingURL
  * Ví dụ: Chuyển đường dẫn url bên dưới thành đường dẫn url thân thiện (url thân thiện giúp người dùng và các công cụ tìm kiếm dễ nhận biết, giúp ít cho SEO))
- *  'How to create a clean & nice-looking URL?' -> 'how-to-create-a-clean-and-nice-looking-url'
+ *  'How to generate a clean & nice-looking URL?' -> 'how-to-generate-a-clean-and-nice-looking-url'
  */
 
 var getSlug = require('speakingurl');
 
-const badURL = 'How to create a clean & nice-looking URL?';
+const badURL = 'How to generate a clean & nice-looking URL?';
 
 const slugURL = getSlug(badURL);
 
-console.log(slugURL); // Output: how-to-create-a-clean-and-nice-looking-url
+console.log(slugURL); // Output: how-to-generate-a-clean-and-nice-looking-url
 
 /**
  * getSlug() nhận vào 2 tham số, tham số 1 cần truyền vào chuỗi string, tham số 2 (không bắt buộc) mặc định là ký tự '-', ký tự '-' sẽ thay thế khoảng trắng trong chuỗi string
