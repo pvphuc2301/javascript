@@ -11,16 +11,34 @@ const getSlug = require('speakingurl');
 var contacts = [];
 
 function enterPhone(){
-    let oldPhone, phone;
+    let check, phone;
     do {
         phone = readlineSync.question('Nhập số điện thoại: ');
-        oldContact = contacts.find(contact => contact.phone == phone);
+        check = contacts.find(contact => contact.phone == phone);
         if(phone == '') {
             console.log('Số điện thoại không được bỏ trống.');
-        }else if(oldContact && oldContact.phone != phone) {
+        }else if(check) {
             console.log('Số điện thoại đã tồn tại! Hãy nhập sô khác.');
         }
-    } while (oldContact && oldContact.phone != phone || phone == '')
+    } 
+    while(phone == '' || check)
+    
+    return phone;
+}
+
+function editPhone(oldphone){
+    let check, phone;
+    phone = readlineSync.question('Nhập số điện thoại: ');
+    check = contacts.find(contact => contact.phone == phone);
+    do {
+        if(phone == '') {
+            console.log('Số điện thoại không được bỏ trống.');
+        }else if(check && check != oldphone) {
+            console.log('Số điện thoại đã tồn tại! Hãy nhập sô khác.');
+        }
+    }
+    while(phone == '' || (check && check != oldphone))
+    
     return phone;
 }
 
@@ -50,10 +68,10 @@ function showAddContact(){
 function showEditContact(){
     const key = readlineSync.question('Nhập giá trị (sđt): ');
 
-    const check = contacts.find(contact => contact.phone == key);
-    if(check){
+    const oldphone = contacts.find(contact => contact.phone == key);
+    if(oldphone){
         const name = enterName();
-        const phone = enterPhone();
+        const phone = editPhone(oldphone);
     
         contacts.filter(contact => contact.phone == key)
         .map(e => {
