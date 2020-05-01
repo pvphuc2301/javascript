@@ -28,8 +28,9 @@ console.log('Nothing');
         request(url, function (error, response, body) {
         if (error !== null) {
             reject(error);
-        }
+        }else {
             resolve(body);
+        }
         });
     });
  }
