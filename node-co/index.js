@@ -16,15 +16,6 @@ var urls = [
   // Cách 2: Sử dụng array.map
   // Gợi ý: Có thể yield 1 array các Promise
 
-//   var loadUrls = co.wrap(function*(urls){
-//     var values = yield urls.map(function(url) {
-//         return axios(url);
-//     });
-//     return values;
-//   })
-
-//   loadUrls(urls);
-
 co(function* (){
     var result = yield urls.map(function(url) {
         return axios(url);
