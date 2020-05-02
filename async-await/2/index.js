@@ -32,6 +32,6 @@ fetchUrls(urls).then(() => console.log('Done'));
 fetchUrlsParallel(urls).then(() => console.log('Done 2'));
 
 //Trả lời:
-//đối với hàm fetchUrls, mỗi lần load dữ liệu cần phải đợi phần tử trước load xong mới load tiếp dữ liệu tiếp theo, trả về kết quả khi phần tử cuối mảng load xong dữ liệu.
-//đối với hàm fetchUrlsParallel, cùng một lúc có thể load nhiều dữ liệu, hàm trả về kết quả khi dữ liệu có thời gian load lâu nhất hoàn thành
-//-> tốc độ hàm fetchUrlsParallel sẽ nhanh hơn vì cùng một lúc có thể load được nhiều dữ liệu
+//đối với hàm fetchUrls(), mỗi lần load dữ liệu cần phải đợi phần tử trước load xong mới load tiếp dữ liệu tiếp theo, trả về kết quả khi phần tử cuối mảng load xong dữ liệu.
+//đối với hàm fetchUrlsParallel(), cùng một lúc có thể load nhiều dữ liệu, hàm trả về kết quả khi dữ liệu có thời gian load lâu nhất hoàn thành
+//-> tốc độ hàm fetchUrlsParallel() sẽ nhanh hơn vì cùng một lúc có thể load được nhiều dữ liệu
